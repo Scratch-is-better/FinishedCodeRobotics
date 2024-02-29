@@ -105,7 +105,7 @@ void sonic()
         digitalWrite(led, LOW);
         delay(cm + 50);  
     }
-    else (cm > 330)
+    else (cm > 330);
     {
         digitalWrite(led, LOW);
     }
