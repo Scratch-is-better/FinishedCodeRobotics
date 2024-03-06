@@ -29,7 +29,7 @@ void stopSound()
 {
     if(digitalRead(button) == LOW)
     {
-        // TODO: mutex to protect simultaneous control from main loop 
+      
         noTone(buzzer);   
     }
 }
@@ -52,6 +52,7 @@ void setup()
     pinMode(buzzer, OUTPUT);
     pinMode(button, INPUT);
     Serial.begin(9600);
+    
     attachInterrupt(digitalPinToInterrupt(button), stopSound, CHANGE);
 }
 
@@ -62,7 +63,7 @@ void buzz()
         for(int freq: freq_array)
         {  
             tone(buzzer, freq);
-            // TODO: move this code to a timer interrupt so as to not hold up main loop
+  
             delay(400);
             noTone(buzzer);
             
